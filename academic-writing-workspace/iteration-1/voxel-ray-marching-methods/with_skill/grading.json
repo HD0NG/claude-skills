@@ -1,0 +1,46 @@
+{
+  "eval_id": 0,
+  "config": "with_skill",
+  "expectations": [
+    {
+      "text": "no-filler-opener",
+      "passed": true,
+      "evidence": "The paragraph opens with 'Solar irradiance on segmented roof surfaces was estimated using voxel-based ray marching...' — a direct, substantive opener with no filler phrase such as 'In this study', 'In this paper', or 'It is worth noting'."
+    },
+    {
+      "text": "passive-not-stilted",
+      "passed": true,
+      "evidence": "Passive voice is used appropriately for technical description (e.g., 'was estimated', 'were first extracted', 'were cast', 'were assigned'). No instances of 'it was found that', 'it can be seen that', or 'it is important to note'. No awkward nominalizations found; actions are stated directly (e.g., 'rays were cast' not 'the casting of rays was performed')."
+    },
+    {
+      "text": "ahn3-expanded-on-first-use",
+      "passed": true,
+      "evidence": "Lines 2-3 read: 'Actueel Hoogtebestand Nederland third edition (AHN3) airborne Light Detection and Ranging (LiDAR)' — AHN3 is given a full expansion on its first use, not introduced as bare 'AHN3'."
+    },
+    {
+      "text": "voxel-ray-marching-used-correctly-in-context",
+      "passed": true,
+      "evidence": "Lines 7-9: 'For each sample point, rays were cast toward 145 discrete directions distributed uniformly across the upper hemisphere' — rays originate from surface sample points toward the sky, not from the sky toward the surface. Transmittance accumulates through occupied voxels (lines 9-11), and attenuation is per-material (building voxels fully opaque via hard blocking; vegetation voxels assigned kappa=0.5 m^-1, lines 19-22)."
+    },
+    {
+      "text": "no-symmetrical-sentence-structures",
+      "passed": true,
+      "evidence": "Sentence structures vary throughout the paragraph: sentences vary in length, opening syntax, and use of active vs. passive voice. The em-dash parenthetical in sentence 2, the displayed equation mid-paragraph, and the compound structure of the final sentence all break any repetitive rhythm. No two consecutive sentences follow the same syntactic template."
+    },
+    {
+      "text": "quantifies-all-parameters",
+      "passed": true,
+      "evidence": "Voxel resolution: '0.5~m isotropic voxel grid' (line 6); sky dome directions: '145 discrete directions' (line 7); attenuation coefficient: '$\\kappa = 0.5~\\mathrm{m}^{-1}$' (line 21)."
+    },
+    {
+      "text": "latex-format",
+      "passed": true,
+      "evidence": "The file contains a displayed equation using \\begin{equation}...\\end{equation} with \\label (lines 13-16), inline math ($\\tau$, $\\kappa$, $\\mathbf{x}(s)$, etc.), \\citep{} citation commands, and LaTeX formatting commands including \\noindent, ~ for non-breaking spaces, and \\mathrm{}."
+    },
+    {
+      "text": "no-ai-sounding-phrases",
+      "passed": true,
+      "evidence": "No instances of 'comprehensive approach', 'robust framework', 'novel methodology', 'in recent years', or 'it is worth noting' appear anywhere in the text."
+    }
+  ]
+}

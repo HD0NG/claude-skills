@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "skill_name": "academic-writing",
+    "skill_path": "/Users/hdong/Projects/claude-skills/skills/academic-writing",
+    "executor_model": "claude-sonnet-4-6",
+    "analyzer_model": "claude-sonnet-4-6",
+    "timestamp": "2026-03-17T00:45:00Z",
+    "evals_run": [0, 1, 2],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "voxel-ray-marching-methods",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 32.4,
+        "tokens": 12518,
+        "tool_calls": 3,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "no-filler-opener", "passed": true, "evidence": "Opens with 'Solar irradiance on segmented roof surfaces was estimated using voxel-based ray marching...'"},
+        {"text": "passive-not-stilted", "passed": true, "evidence": "Passive voice used naturally; no 'it was found that', no awkward nominalizations"},
+        {"text": "ahn3-expanded-on-first-use", "passed": true, "evidence": "'Actueel Hoogtebestand Nederland third edition (AHN3)' on first use — expansion first, abbreviation in parentheses"},
+        {"text": "voxel-ray-marching-used-correctly-in-context", "passed": true, "evidence": "Rays cast from surface points toward sky; transmittance accumulates per-voxel; attenuation per-material"},
+        {"text": "no-symmetrical-sentence-structures", "passed": true, "evidence": "Sentence structure, length, and syntax vary throughout"},
+        {"text": "quantifies-all-parameters", "passed": true, "evidence": "0.5 m voxel resolution, 145 sky directions, κ = 0.5 m⁻¹ all present"},
+        {"text": "latex-format", "passed": true, "evidence": "Uses \\begin{equation}, \\citep{}, inline math, \\mathrm{}"},
+        {"text": "no-ai-sounding-phrases", "passed": true, "evidence": "None of the flagged AI phrases appear"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "voxel-ray-marching-methods",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.875,
+        "passed": 7,
+        "failed": 1,
+        "total": 8,
+        "time_seconds": 25.7,
+        "tokens": 9121,
+        "tool_calls": 2,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "no-filler-opener", "passed": true, "evidence": "Opens with 'Solar irradiance on segmented roof surfaces was estimated...'"},
+        {"text": "passive-not-stilted", "passed": true, "evidence": "Passive voice used appropriately; no stilted phrases"},
+        {"text": "ahn3-expanded-on-first-use", "passed": false, "evidence": "Wrote 'AHN3 (Actueel Hoogtebestand Nederland 3)' — abbreviation first, expansion in parentheses — reverse of the required convention"},
+        {"text": "voxel-ray-marching-used-correctly-in-context", "passed": true, "evidence": "Rays originate from roof voxel centroids toward sky dome; physically accurate"},
+        {"text": "no-symmetrical-sentence-structures", "passed": true, "evidence": "Sentence rhythm varies throughout"},
+        {"text": "quantifies-all-parameters", "passed": true, "evidence": "0.5 m, 145 directions, μ_veg = 0.5 m⁻¹ all present"},
+        {"text": "latex-format", "passed": true, "evidence": "Uses \\begin{equation}, math mode, \\cite, \\label"},
+        {"text": "no-ai-sounding-phrases", "passed": true, "evidence": "None of the flagged AI phrases found"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "abstract-revision",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.857,
+        "passed": 6,
+        "failed": 1,
+        "total": 7,
+        "time_seconds": 28.2,
+        "tokens": 12291,
+        "tool_calls": 3,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "removes-in-this-paper-opener", "passed": true, "evidence": "Opens with 'Accurate digital terrain models (DTMs) derived from airborne laser scanning are essential...'"},
+        {"text": "ahn4-expanded-on-first-use", "passed": true, "evidence": "'Actueel Hoogtebestand Nederland 4 (AHN4)' — expansion first, abbreviation in parentheses"},
+        {"text": "gap-is-specific", "passed": true, "evidence": "Names degraded performance over dense vegetation/complex urban scenes, auxiliary input requirements"},
+        {"text": "removes-good-performance", "passed": true, "evidence": "Replaced with RMSE X.XX m, MAE X.XX m, XX% improvement over baseline"},
+        {"text": "structure-problem-gap-method-result-significance", "passed": true, "evidence": "All five structural components present in order"},
+        {"text": "no-symmetrical-sentence-structures", "passed": false, "evidence": "All five sentences are 25–50 words; sentences 2 and 3 share parallel participial scaffold; no short punchy sentence"},
+        {"text": "under-200-words", "passed": true, "evidence": "155 words"}
+      ],
+      "notes": ["The sentence-rhythm failure suggests the skill's voice profile instruction is not prominent enough in the abstract guidance — addressed in skill update."]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "abstract-revision",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.714,
+        "passed": 5,
+        "failed": 2,
+        "total": 7,
+        "time_seconds": 19.9,
+        "tokens": 8710,
+        "tool_calls": 2,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "removes-in-this-paper-opener", "passed": true, "evidence": "Opens with 'Accurate digital terrain models (DTMs) are essential...'"},
+        {"text": "ahn4-expanded-on-first-use", "passed": false, "evidence": "Bare 'AHN4' with no expansion — same convention error as eval 0 baseline"},
+        {"text": "gap-is-specific", "passed": true, "evidence": "Explicitly names dependency on auxiliary inputs (land cover classifications, intensity data)"},
+        {"text": "removes-good-performance", "passed": true, "evidence": "Replaced with 'reduces mean absolute error by X% relative to the leading conventional baseline'"},
+        {"text": "structure-problem-gap-method-result-significance", "passed": true, "evidence": "All five structural components present"},
+        {"text": "no-symmetrical-sentence-structures", "passed": false, "evidence": "All sentences 25–35 words; sentences 3 and 4 share near-identical participial scaffold; no rhythm variation"},
+        {"text": "under-200-words", "passed": true, "evidence": "~152 words"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "gap-and-contribution",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 39.2,
+        "tokens": 12631,
+        "tool_calls": 3,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "no-filler-opener", "passed": true, "evidence": "Opens with 'Existing approaches to roof segmentation for solar potential estimation divide into two families...'"},
+        {"text": "names-specific-limitation-2d-rasterization", "passed": true, "evidence": "Names DSM rasterization explicitly with downstream consequence: 'systematic orientation errors'"},
+        {"text": "names-specific-limitation-manual-annotation", "passed": true, "evidence": "'annotating thousands of rooftops per city is prohibitive'"},
+        {"text": "falsifiable-contributions", "passed": true, "evidence": "AHN3, Rotterdam/Amsterdam/Utrecht, 12,000 rooftops all named"},
+        {"text": "no-symmetrical-filler", "passed": true, "evidence": "Three contributions are substantively distinct, not cosmetically balanced"},
+        {"text": "no-novel-robust-comprehensive", "passed": true, "evidence": "None of the flagged adjectives appear"},
+        {"text": "latex-ready", "passed": true, "evidence": "Uses \\citep{}, \\begin{enumerate}, \\, spacing — fully LaTeX-formatted"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "gap-and-contribution",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.571,
+        "passed": 4,
+        "failed": 3,
+        "total": 7,
+        "time_seconds": 26.9,
+        "tokens": 9009,
+        "tool_calls": 2,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "no-filler-opener", "passed": false, "evidence": "'In this paper, we address this gap by presenting...' — classic filler opener in second paragraph"},
+        {"text": "names-specific-limitation-2d-rasterization", "passed": true, "evidence": "Explicitly names 2D rasterization with explanation"},
+        {"text": "names-specific-limitation-manual-annotation", "passed": true, "evidence": "Named as scalability bottleneck"},
+        {"text": "falsifiable-contributions", "passed": true, "evidence": "AHN3, three cities, 12,000+ rooftops all present"},
+        {"text": "no-symmetrical-filler", "passed": false, "evidence": "Three-part (i)/(ii)/(iii) triad reads as formulaic filler structure"},
+        {"text": "no-novel-robust-comprehensive", "passed": false, "evidence": "'robust' in contribution (ii), 'state-of-the-art' in paragraph one"},
+        {"text": "latex-ready", "passed": true, "evidence": "Uses \\cite{}, --- em-dash, ~ non-breaking spaces"}
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 0.952, "stddev": 0.067, "min": 0.857, "max": 1.0},
+      "time_seconds": {"mean": 33.3, "stddev": 4.5, "min": 28.2, "max": 39.2},
+      "tokens": {"mean": 12480, "stddev": 141, "min": 12291, "max": 12631}
+    },
+    "without_skill": {
+      "pass_rate": {"mean": 0.720, "stddev": 0.127, "min": 0.571, "max": 0.875},
+      "time_seconds": {"mean": 24.2, "stddev": 3.1, "min": 19.9, "max": 26.9},
+      "tokens": {"mean": 8947, "stddev": 174, "min": 8710, "max": 9121}
+    },
+    "delta": {
+      "pass_rate": "+0.23",
+      "time_seconds": "+9.1",
+      "tokens": "+3533"
+    }
+  },
+  "notes": [
+    "With updated discriminating assertions, the skill shows a clear +0.23 pass rate advantage (0.952 vs 0.720).",
+    "The most consistent discriminating signal is acronym expansion convention: the baseline writes 'AHN3 (expansion)' in both evals 0 and 1, getting the convention backwards. The skill gets it right both times ('expansion (AHN3)').",
+    "Sentence rhythm (no-symmetrical-sentence-structures) fails for BOTH configurations on the abstract eval. This is a genuine skill gap — the voice profile mentions rhythm variation but the abstract section guidance didn't enforce it. Fix applied: abstract section now explicitly requires at least one short sentence among longer ones.",
+    "Eval 2 (gap-and-contribution) remains the most discriminating: with_skill 7/7 vs without_skill 4/7. Baseline failures: filler opener, symmetrical triad, 'robust'/'state-of-the-art' as empty adjectives.",
+    "The skill costs ~9s and ~3500 tokens more on average. Given the manual revision effort these tasks would otherwise require, the overhead is negligible."
+  ]
+}

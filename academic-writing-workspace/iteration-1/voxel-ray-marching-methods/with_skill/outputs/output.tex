@@ -1,0 +1,29 @@
+Solar irradiance on segmented roof surfaces was estimated using voxel-based ray marching
+combined with the Beer--Lambert Law. Roof surfaces were first extracted from the Actueel
+Hoogtebestand Nederland third edition (AHN3) airborne Light Detection and Ranging (LiDAR)
+point cloud via planar segmentation, with each resulting surface patch assigned a set of
+sample points for irradiance evaluation. The surrounding scene --- including buildings and
+vegetation --- was rasterised into a 0.5~m isotropic voxel grid covering the full extent
+of the study area. For each sample point, rays were cast toward 145 discrete directions
+distributed uniformly across the upper hemisphere, following a parameterisation of the sky
+dome based on Tregenza subdivision \citep{Tregenza1983}. Along each ray, the cumulative
+transmittance $\tau$ was computed by integrating the extinction coefficient $\kappa$ over
+the ray path through the voxel grid,
+
+\begin{equation}
+    \tau = \exp\!\left(-\int_0^{L} \kappa\!\left(\mathbf{x}(s)\right)\mathrm{d}s\right),
+    \label{eq:beer-lambert}
+\end{equation}
+
+\noindent where $\mathbf{x}(s)$ is the ray position at path length $s$ and $L$ is the
+total ray length to the sky dome boundary. Building voxels were treated as fully opaque
+($\kappa \to \infty$, implemented as hard blocking), while vegetation voxels were assigned
+an attenuation coefficient of $\kappa = 0.5~\mathrm{m}^{-1}$, consistent with empirical
+estimates of plant-area-density extinction for urban tree canopies
+\citep{Jonckheere2004,Widlowski2006}. The per-direction transmittance values were then
+weighted by the corresponding sky radiance distribution --- using the all-sky Perez model
+for diffuse irradiance and direct-beam geometry for beam irradiance --- and integrated to
+yield the plane-of-array (POA) irradiance at each sample point. Occlusion by surrounding
+structures is therefore fully accounted for through the ray transmittance rather than
+through a binary sky view factor, enabling a continuous representation of partial shading
+by vegetation.

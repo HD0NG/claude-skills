@@ -1,0 +1,12 @@
+\subsection*{Solar Irradiance Estimation via Voxel-Based Ray Marching}
+
+Solar irradiance on segmented roof surfaces was estimated using a voxel-based ray marching approach applied to airborne LiDAR point clouds acquired through the AHN3 (Actueel Hoogtebestand Nederland 3) survey. The raw point cloud data were first classified to extract roof surface segments, after which the three-dimensional scene---encompassing buildings, vegetation, and terrain---was discretized into a regular voxel grid with a spatial resolution of $0.5\,\mathrm{m}$. Each voxel was assigned an occupancy state based on the density of LiDAR returns within its bounds, with vegetated voxels distinguished from built structures using available point classification labels.
+
+To model solar access at each roof surface element, rays were cast from the centroid of every occupied roof voxel toward a discretized sky dome comprising 145 directions, derived from a quasi-uniform hemispherical sampling scheme. For each ray direction, the fractional transmittance $T$ was computed by integrating attenuation along the ray path through the voxel grid according to the Beer--Lambert Law:
+%
+\begin{equation}
+    T = \exp\!\left(-\int_{0}^{L} \mu(s)\,\mathrm{d}s\right),
+    \label{eq:beer-lambert}
+\end{equation}
+%
+\noindent where $\mu(s)$ is the spatially varying attenuation coefficient at position $s$ along the ray and $L$ is the total ray path length through the scene. Solid opaque voxels (e.g., building walls and roofs) were treated as fully blocking ($\mu \to \infty$), whereas vegetation voxels were assigned an attenuation coefficient of $\mu_{\mathrm{veg}} = 0.5\,\mathrm{m}^{-1}$, consistent with empirical values reported for urban tree canopies~\cite{Widlowski2006}. The integral in Equation~\ref{eq:beer-lambert} was evaluated numerically via ray marching, advancing along each ray in steps equal to the voxel resolution and accumulating the optical depth $\tau = \mu \cdot \Delta s$ at each step. The resulting per-direction transmittance values were then weighted by the corresponding sky radiance contribution---derived from an isotropic diffuse sky model or a direct solar component for beam irradiance estimation---and summed to yield the total incident irradiance at each roof surface element. This procedure explicitly accounts for occlusion by surrounding buildings and the partial transmittance of urban vegetation, enabling spatially resolved solar potential mapping directly from the AHN3 point cloud without requiring a priori surface reconstruction.

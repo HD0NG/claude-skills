@@ -1,0 +1,35 @@
+{
+  "eval_id": 2,
+  "eval_name": "gap-and-contribution",
+  "prompt": "Write the gap statement and contribution paragraph for the introduction of a paper on automatic roof segmentation from airborne LiDAR point clouds for large-scale solar potential estimation. The key gap is that existing roof segmentation methods either rely on 2D rasterization (losing 3D structure) or require manually annotated training data at scale. Our method uses unsupervised 3D geometric clustering on raw point clouds and has been validated on AHN3 data across three Dutch cities (Rotterdam, Amsterdam, Utrecht), covering 12,000 rooftops.",
+  "assertions": [
+    {
+      "name": "no-filler-opener",
+      "description": "Does not start with 'In this paper', 'In this study', 'This paper presents', or similar"
+    },
+    {
+      "name": "names-specific-limitation-2d-rasterization",
+      "description": "Explicitly names 2D rasterization as a specific limitation of existing approaches (not just 'existing methods have drawbacks')"
+    },
+    {
+      "name": "names-specific-limitation-manual-annotation",
+      "description": "Explicitly names the manual annotation requirement as a specific scalability bottleneck"
+    },
+    {
+      "name": "falsifiable-contributions",
+      "description": "Contributions are stated specifically enough to be verifiable (mentions AHN3, three cities, or 12,000 rooftops)"
+    },
+    {
+      "name": "no-symmetrical-filler",
+      "description": "No 'not only X but also Y' constructions or suspiciously balanced bullet triads"
+    },
+    {
+      "name": "no-novel-robust-comprehensive",
+      "description": "Does not use 'novel', 'robust', 'comprehensive', or 'state-of-the-art' as empty adjectives"
+    },
+    {
+      "name": "latex-ready",
+      "description": "Output is either LaTeX-formatted or clearly written as academic prose ready for LaTeX insertion"
+    }
+  ]
+}

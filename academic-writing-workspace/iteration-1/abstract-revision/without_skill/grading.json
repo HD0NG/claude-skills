@@ -1,0 +1,41 @@
+{
+  "eval_id": 1,
+  "config": "without_skill",
+  "expectations": [
+    {
+      "text": "removes-in-this-paper-opener",
+      "passed": true,
+      "evidence": "Abstract opens with 'Accurate digital terrain models (DTMs) are essential...' — no filler opener present."
+    },
+    {
+      "text": "ahn4-expanded-on-first-use",
+      "passed": false,
+      "evidence": "AHN4 is introduced as bare 'AHN4' ('...from the AHN4 nationwide LiDAR survey of the Netherlands...') without the full expansion 'Actueel Hoogtebestand Nederland 4 (AHN4)' or any equivalent."
+    },
+    {
+      "text": "gap-is-specific",
+      "passed": true,
+      "evidence": "Gap names a concrete limitation: 'Existing filtering-based approaches depend on auxiliary inputs — such as land cover classifications or intensity data — that are frequently unavailable or inconsistent across acquisition campaigns.'"
+    },
+    {
+      "text": "removes-good-performance",
+      "passed": true,
+      "evidence": "'Achieves good performance' is replaced with 'the model reduces mean absolute error by X% relative to the leading conventional baseline' — a specific quantitative claim with an acceptable placeholder."
+    },
+    {
+      "text": "structure-problem-gap-method-result-significance",
+      "passed": true,
+      "evidence": "Problem (DTM derivation challenging in vegetated/built-up areas) → Gap (existing approaches need auxiliary inputs) → Method (Residual U-Net trained on DSMs from AHN4, no ancillary data) → Result (reduces MAE by X%, preserves break-lines) → Significance (scalable pathway for automated DTM generation from future high-density LiDAR)."
+    },
+    {
+      "text": "no-symmetrical-sentence-structures",
+      "passed": false,
+      "evidence": "All five sentences are long and syntactically similar in weight (roughly 25–35 words each, each carrying subordinate clauses). No short, punchy sentence appears to break the rhythm. Consecutive sentences 3 and 4 share a '[Subject] [verb phrase], [participial phrase]' scaffold ('We address this gap by training... eliminating...' / 'the model reduces... while preserving...')."
+    },
+    {
+      "text": "under-200-words",
+      "passed": true,
+      "evidence": "Word count is approximately 152 words, well under the 200-word limit."
+    }
+  ]
+}

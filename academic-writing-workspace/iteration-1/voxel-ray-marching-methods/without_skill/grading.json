@@ -1,0 +1,46 @@
+{
+  "eval_id": 0,
+  "config": "without_skill",
+  "expectations": [
+    {
+      "text": "no-filler-opener",
+      "passed": true,
+      "evidence": "The text opens with 'Solar irradiance on segmented roof surfaces was estimated...', which is a direct, substantive opener without filler phrases like 'In this study', 'In this paper', or 'It is worth noting'."
+    },
+    {
+      "text": "passive-not-stilted",
+      "passed": true,
+      "evidence": "Passive voice is used appropriately for technical descriptions (e.g., 'rays were cast', 'was computed', 'were assigned'). No instances of 'it was found that', 'it can be seen that', or 'it is important to note'. Nominalizations are natural rather than awkward (e.g., 'the fractional transmittance T was computed' is idiomatic technical phrasing)."
+    },
+    {
+      "text": "ahn3-expanded-on-first-use",
+      "passed": false,
+      "evidence": "AHN3 is introduced as 'AHN3 (Actueel Hoogtebestand Nederland 3)' — the abbreviation appears first with the expansion in parentheses. Standard convention requires the full name first with the abbreviation in parentheses: 'Actueel Hoogtebestand Nederland 3 (AHN3)'."
+    },
+    {
+      "text": "voxel-ray-marching-used-correctly-in-context",
+      "passed": true,
+      "evidence": "Rays are cast 'from the centroid of every occupied roof voxel toward a discretized sky dome', originating from surface points toward the sky. Transmittance accumulates via Beer-Lambert integration through occupied voxels. Attenuation is per-material: solid voxels are fully blocking (mu -> infinity), vegetation voxels have mu_veg = 0.5 m^-1. Rays do not originate from the sky or light source."
+    },
+    {
+      "text": "no-symmetrical-sentence-structures",
+      "passed": true,
+      "evidence": "Sentence structure varies throughout the paragraph. No two or more consecutive sentences follow the same syntactic pattern; the text mixes long complex sentences, participial phrases, equations, and varied clause structures."
+    },
+    {
+      "text": "quantifies-all-parameters",
+      "passed": true,
+      "evidence": "Voxel resolution: '$0.5\\,\\mathrm{m}$' (line 3); sky dome directions: '145 directions' (line 5); attenuation coefficient: '$\\mu_{\\mathrm{veg}} = 0.5\\,\\mathrm{m}^{-1}$' (line 12). All three required parameters are present."
+    },
+    {
+      "text": "latex-format",
+      "passed": true,
+      "evidence": "Output uses '\\begin{equation}...\\end{equation}' with inline math, '\\cite{Widlowski2006}', '\\label' and '\\ref', '\\mathrm', '\\noindent', and '\\subsection*'."
+    },
+    {
+      "text": "no-ai-sounding-phrases",
+      "passed": true,
+      "evidence": "No instances of 'comprehensive approach', 'robust framework', 'novel methodology', 'in recent years', or 'it is worth noting' appear in the text. Language is technical and specific throughout."
+    }
+  ]
+}

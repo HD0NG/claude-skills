@@ -1,0 +1,41 @@
+{
+  "eval_id": 2,
+  "config": "with_skill",
+  "expectations": [
+    {
+      "text": "no-filler-opener",
+      "passed": true,
+      "evidence": "The text opens with 'Existing approaches to roof segmentation for solar potential estimation divide into two families, each with a structural limitation.' — no filler opener present."
+    },
+    {
+      "text": "names-specific-limitation-2d-rasterization",
+      "passed": true,
+      "evidence": "Line 4–8 explicitly names 'rasterize airborne point clouds into a Digital Surface Model (DSM)' and later 'DSM-derived estimates carry systematic orientation errors' and contribution item 1 specifically says 'without labelled supervision or DSM rasterization'."
+    },
+    {
+      "text": "names-specific-limitation-manual-annotation",
+      "passed": true,
+      "evidence": "Lines 10–12 state methods 'depend on manually annotated training sets or hand-tuned building-specific parameters that do not transfer across cities without re-annotation.' Line 13–15 adds 'annotating thousands of rooftops per city is prohibitive'."
+    },
+    {
+      "text": "falsifiable-contributions",
+      "passed": true,
+      "evidence": "Lines 24–26 mention 'Actueel Hoogtebestand Nederland 3 (AHN3) dataset across three Dutch cities --- Rotterdam, Amsterdam, and Utrecht --- covering 12\\,000 rooftops'. All three specifics (AHN3, three cities, 12,000 rooftops) are present."
+    },
+    {
+      "text": "no-symmetrical-filler",
+      "passed": true,
+      "evidence": "No 'not only X but also Y' constructions appear. The three enumerated contributions are distinct and substantive (algorithm, validation, pipeline release), not a suspiciously balanced rhetorical triad added as filler."
+    },
+    {
+      "text": "no-novel-robust-comprehensive",
+      "passed": true,
+      "evidence": "A full scan of the text finds none of the adjectives 'novel', 'robust', 'comprehensive', or 'state-of-the-art' used anywhere."
+    },
+    {
+      "text": "latex-ready",
+      "passed": true,
+      "evidence": "The file uses LaTeX comment markers (%), a \\begin{enumerate}/\\end{enumerate} environment, \\citep{} citation commands, and \\, for a thin space in '12\\,000', confirming it is LaTeX-formatted prose ready for insertion."
+    }
+  ]
+}

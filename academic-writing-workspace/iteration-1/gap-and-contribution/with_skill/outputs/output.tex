@@ -1,0 +1,38 @@
+% Gap statement
+Existing approaches to roof segmentation for solar potential estimation divide into two
+families, each with a structural limitation.
+Methods that rasterize airborne point clouds into a Digital Surface Model (DSM) before
+segmenting \citep{Jakubiec2013, Freitas2015, Bergamasco2018} discard the vertical structure
+encoded in raw point density: overhangs, dormers, and flush abutments between adjacent roof
+planes collapse into ambiguous intensity gradients, and segmentation errors propagate directly
+into tilt and orientation estimates.
+Methods that operate on the three-dimensional (3D) point cloud directly \citep{Awrangjeb2014,
+Verma2006, Sampath2010} achieve finer geometric fidelity but depend on manually annotated
+training sets or hand-tuned building-specific parameters that do not transfer across cities
+without re-annotation.
+Neither family scales readily to the urban extent at which solar policy operates: annotating
+thousands of rooftops per city is prohibitive, and DSM-derived estimates carry systematic
+orientation errors on complex roof forms that compound across an entire municipality.
+
+% Contribution paragraph
+We propose an unsupervised 3D geometric clustering pipeline that segments roof planes directly
+from raw airborne Light Detection and Ranging (LiDAR) point clouds, requiring no manually
+labelled training data.
+Building points are extracted and partitioned into planar segments through iterative
+normal-based clustering, and each segment is attributed with tilt, azimuth, and projected
+area without any intermediate rasterization step.
+We validate the method on the Actueel Hoogtebestand Nederland 3 (AHN3) dataset across three
+Dutch cities --- Rotterdam, Amsterdam, and Utrecht --- covering 12\,000 rooftops, demonstrating
+that city-to-city transfer requires no retraining and no parameter re-tuning.
+The specific contributions are as follows:
+%
+\begin{enumerate}
+  \item An unsupervised roof segmentation algorithm that operates on raw 3D point clouds and
+        produces per-segment tilt and azimuth estimates without labelled supervision or DSM
+        rasterization.
+  \item A large-scale validation across three geographically and morphologically distinct Dutch
+        cities, covering 12\,000 rooftops drawn from AHN3, establishing transferability across
+        urban contexts.
+  \item A publicly released processing pipeline enabling city-scale photovoltaic (PV) potential
+        estimation from nationally available airborne laser scanning data.
+\end{enumerate}

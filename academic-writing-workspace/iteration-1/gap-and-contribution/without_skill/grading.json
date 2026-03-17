@@ -1,0 +1,41 @@
+{
+  "eval_id": 2,
+  "config": "without_skill",
+  "expectations": [
+    {
+      "text": "no-filler-opener",
+      "passed": false,
+      "evidence": "The second paragraph begins with 'In this paper, we address this gap by presenting...' — a classic filler opener."
+    },
+    {
+      "text": "names-specific-limitation-2d-rasterization",
+      "passed": true,
+      "evidence": "The first paragraph explicitly states: 'Many state-of-the-art roof segmentation approaches rely on 2D rasterization of point cloud data---converting three-dimensional measurements into grid-based representations such as digital surface models or top-view intensity images before applying segmentation algorithms.'"
+    },
+    {
+      "text": "names-specific-limitation-manual-annotation",
+      "passed": true,
+      "evidence": "'Manual annotation of rooftop geometry is both time-consuming and expert-dependent, and publicly available labeled datasets cover only a narrow range of urban morphologies, limiting generalization across cities and national mapping campaigns.'"
+    },
+    {
+      "text": "falsifiable-contributions",
+      "passed": true,
+      "evidence": "Contributions mention 'the AHN3 national airborne LiDAR dataset across three structurally diverse Dutch cities---Rotterdam, Amsterdam, and Utrecht---encompassing more than 12,000 rooftops.'"
+    },
+    {
+      "text": "no-symmetrical-filler",
+      "passed": false,
+      "evidence": "The contributions are structured as a three-part bullet triad (i), (ii), (iii) that reads as a suspiciously balanced filler construction, e.g., 'an unsupervised 3D geometric clustering pipeline... (ii) a systematic large-scale validation... (iii) a publicly released processing workflow...'"
+    },
+    {
+      "text": "no-novel-robust-comprehensive",
+      "passed": false,
+      "evidence": "The word 'robust' appears as an empty adjective in contribution (ii): 'a systematic large-scale validation demonstrating robust performance across diverse urban morphologies.' The word 'state-of-the-art' also appears in the first paragraph: 'Many state-of-the-art roof segmentation approaches.'"
+    },
+    {
+      "text": "latex-ready",
+      "passed": true,
+      "evidence": "The output uses LaTeX formatting including \\cite{example}, --- em-dash syntax, and ~ non-breaking spaces, confirming it is LaTeX-ready academic prose."
+    }
+  ]
+}

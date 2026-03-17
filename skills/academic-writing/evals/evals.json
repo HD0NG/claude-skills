@@ -1,0 +1,23 @@
+{
+  "skill_name": "academic-writing",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Write a methods section paragraph (in LaTeX) describing how we use voxel-based ray marching combined with the Beer–Lambert Law to estimate solar irradiance on segmented roof surfaces extracted from AHN3 airborne LiDAR point clouds. The voxel grid resolution is 0.5 m. Occlusion by surrounding buildings and trees is accounted for by casting rays toward a discretized sky dome (145 directions). The attenuation coefficient for vegetation is set to 0.5 m⁻¹.",
+      "expected_output": "A dense, precise methods paragraph in LaTeX. Passive voice. Defines Beer-Lambert Law and voxel-based ray marching on first use. Quantifies all parameters. No filler openers. No AI-sounding phrases. Follows the user's voice profile.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "Here's a draft abstract I wrote for a paper on deep-learning-based DTM extraction from AHN4 DSMs. Please revise it to be sharper — remove any filler, strengthen the claims, and make sure it follows good abstract structure (problem, gap, method, result, significance).\n\nDraft: 'In this paper, we present a deep learning approach for the extraction of digital terrain models (DTMs) from digital surface models (DSMs). Accurate terrain models are very important for many applications including flood risk assessment and urban planning. Existing methods often require additional inputs which may not always be available. We use a Residual U-Net model trained on AHN4 data covering the Netherlands. Our results show that the proposed method achieves good performance. This work may be useful for future terrain modeling studies.'",
+      "expected_output": "A revised abstract that removes filler openers, hollow intensifiers, over-hedged conclusions, and vague claims. Adds a specific quantitative result. Strengthens the contribution. Stays within ~150 words. Follows problem→gap→method→result→significance structure.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Write the gap statement and contribution paragraph for the introduction of a paper on automatic roof segmentation from airborne LiDAR point clouds for large-scale solar potential estimation. The key gap is that existing roof segmentation methods either rely on 2D rasterization (losing 3D structure) or require manually annotated training data at scale. Our method uses unsupervised 3D geometric clustering on raw point clouds and has been validated on AHN3 data across three Dutch cities (Rotterdam, Amsterdam, Utrecht), covering 12,000 rooftops.",
+      "expected_output": "A sharp gap statement that names the specific limitations of existing approaches (not vague 'existing methods have drawbacks'). A contribution paragraph with numbered contributions that are falsifiable. No 'In this paper we present'. No symmetrical filler. Dense and specific. LaTeX-ready.",
+      "files": []
+    }
+  ]
+}

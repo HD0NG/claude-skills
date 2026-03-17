@@ -1,0 +1,41 @@
+{
+  "eval_id": 1,
+  "config": "with_skill",
+  "expectations": [
+    {
+      "text": "removes-in-this-paper-opener",
+      "passed": true,
+      "evidence": "Abstract opens with 'Accurate digital terrain models (DTMs) derived from airborne laser scanning are essential...' — no filler opener present."
+    },
+    {
+      "text": "ahn4-expanded-on-first-use",
+      "passed": true,
+      "evidence": "First use reads: 'Actueel Hoogtebestand Nederland 4 (AHN4) dataset' — fully expanded with abbreviation in parentheses."
+    },
+    {
+      "text": "gap-is-specific",
+      "passed": true,
+      "evidence": "Gap is stated as: 'existing ground-filtering methods degrade in performance over complex urban scenes and dense vegetation without auxiliary inputs such as full-waveform data or manually tuned parameters' — names concrete limitations (auxiliary inputs, parameter tuning, dense urban canopy)."
+    },
+    {
+      "text": "removes-good-performance",
+      "passed": true,
+      "evidence": "No instance of 'good performance'. Replaced with: 'achieves a root mean square error (RMSE) of X.XX m and an mean absolute error (MAE) of X.XX m, outperforming the classical ground-filtering baseline by XX%' — uses quantitative placeholders as specified acceptable."
+    },
+    {
+      "text": "structure-problem-gap-method-result-significance",
+      "passed": true,
+      "evidence": "Problem: DTMs essential for flood risk assessment, urban planning, hydrological modelling. Gap: existing methods degrade without auxiliary inputs. Method: Residual U-Net trained end-to-end on DSMs. Result: RMSE X.XX m, MAE X.XX m, XX% over baseline. Significance: deep learning replaces labour-intensive parameter tuning, implications for national mapping pipelines."
+    },
+    {
+      "text": "no-symmetrical-sentence-structures",
+      "passed": false,
+      "evidence": "All five sentences are medium-to-long (approximately 25-50 words each); no short punchy sentence appears among them. Sentences 2 and 3 share a similar scaffold ('[Subject] [verb phrase], [participial/relative clause]'): 'We propose a Residual U-Net..., requiring no additional...' and 'The model was trained and evaluated..., which provides...' are consecutive and structurally parallel. The abstract lacks the required variety in sentence length and rhythm."
+    },
+    {
+      "text": "under-200-words",
+      "passed": true,
+      "evidence": "Word count is approximately 155 words — well under the 200-word limit."
+    }
+  ]
+}

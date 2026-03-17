@@ -1,0 +1,35 @@
+{
+  "eval_id": 1,
+  "eval_name": "abstract-revision",
+  "prompt": "Here's a draft abstract I wrote for a paper on deep-learning-based DTM extraction from AHN4 DSMs. Please revise it to be sharper — remove any filler, strengthen the claims, and make sure it follows good abstract structure (problem, gap, method, result, significance).\n\nDraft: 'In this paper, we present a deep learning approach for the extraction of digital terrain models (DTMs) from digital surface models (DSMs). Accurate terrain models are very important for many applications including flood risk assessment and urban planning. Existing methods often require additional inputs which may not always be available. We use a Residual U-Net model trained on AHN4 data covering the Netherlands. Our results show that the proposed method achieves good performance. This work may be useful for future terrain modeling studies.'",
+  "assertions": [
+    {
+      "name": "removes-in-this-paper-opener",
+      "description": "The revised abstract does NOT start with 'In this paper', 'In this study', 'This paper presents', or any similar filler opener"
+    },
+    {
+      "name": "ahn4-expanded-on-first-use",
+      "description": "AHN4 is written out as 'Actueel Hoogtebestand Nederland 4 (AHN4)' or equivalent expansion on first use, not introduced as bare 'AHN4'"
+    },
+    {
+      "name": "gap-is-specific",
+      "description": "The gap statement names a concrete limitation of existing methods — not just 'existing methods have drawbacks' but something specific like the need for auxiliary inputs, parameter sensitivity, or inability to handle dense urban canopy"
+    },
+    {
+      "name": "removes-good-performance",
+      "description": "'Achieves good performance' is replaced with a specific metric or quantitative claim (a placeholder like X% or X.XX m is acceptable)"
+    },
+    {
+      "name": "structure-problem-gap-method-result-significance",
+      "description": "Abstract follows problem → gap → method → result → significance structure with each component present"
+    },
+    {
+      "name": "no-symmetrical-sentence-structures",
+      "description": "The abstract does not contain two or more consecutive sentences with the same syntactic scaffold. Sentence length and structure should vary — a short punchy sentence should appear somewhere among the longer ones."
+    },
+    {
+      "name": "under-200-words",
+      "description": "Revised abstract is under 200 words"
+    }
+  ]
+}

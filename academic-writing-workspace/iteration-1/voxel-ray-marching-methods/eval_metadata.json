@@ -1,0 +1,39 @@
+{
+  "eval_id": 0,
+  "eval_name": "voxel-ray-marching-methods",
+  "prompt": "Write a methods section paragraph (in LaTeX) describing how we use voxel-based ray marching combined with the Beer–Lambert Law to estimate solar irradiance on segmented roof surfaces extracted from AHN3 airborne LiDAR point clouds. The voxel grid resolution is 0.5 m. Occlusion by surrounding buildings and trees is accounted for by casting rays toward a discretized sky dome (145 directions). The attenuation coefficient for vegetation is set to 0.5 m⁻¹.",
+  "assertions": [
+    {
+      "name": "no-filler-opener",
+      "description": "Does not start with 'In this study', 'In this paper', 'It is worth noting', or similar filler openers"
+    },
+    {
+      "name": "passive-not-stilted",
+      "description": "Passive voice is used for technical descriptions but does not produce stilted phrasing. Specifically: no 'it was found that', no 'it can be seen that', no 'it is important to note', and no awkward nominalizations where a simpler phrasing would serve (e.g., 'the computation of X was performed' instead of 'X was computed')"
+    },
+    {
+      "name": "ahn3-expanded-on-first-use",
+      "description": "AHN3 is written out in full as 'Actueel Hoogtebestand Nederland 3 (AHN3)' or equivalent expansion on first use, not introduced as bare 'AHN3'"
+    },
+    {
+      "name": "voxel-ray-marching-used-correctly-in-context",
+      "description": "Voxel-based ray marching is described in a way that is physically accurate: rays are cast from surface points toward the sky, transmittance accumulates through occupied voxels, and attenuation is per-material. It should NOT describe rays as originating from the sky or light source toward the surface."
+    },
+    {
+      "name": "no-symmetrical-sentence-structures",
+      "description": "The paragraph does not contain two or more consecutive sentences with parallel syntactic structure (e.g., 'X was computed. Y was computed. Z was computed.'). Sentence rhythm should vary."
+    },
+    {
+      "name": "quantifies-all-parameters",
+      "description": "Voxel resolution (0.5 m), sky dome directions (145), and attenuation coefficient (0.5 m⁻¹) are all present"
+    },
+    {
+      "name": "latex-format",
+      "description": "Output is formatted as LaTeX (uses equations with \\begin{equation}, inline math, \\cite, or similar LaTeX constructs)"
+    },
+    {
+      "name": "no-ai-sounding-phrases",
+      "description": "Does not contain phrases like 'comprehensive approach', 'robust framework', 'novel methodology', 'in recent years', 'it is worth noting'"
+    }
+  ]
+}
